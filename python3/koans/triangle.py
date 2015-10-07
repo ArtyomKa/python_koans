@@ -18,7 +18,14 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    num_unique_sides = len({a,b,c})
+
+    if num_unique_sides is 3:
+        return 'scalene'
+    elif num_unique_sides is 2:
+        return 'isosceles'
+    else:
+        return 'equilateral'
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
