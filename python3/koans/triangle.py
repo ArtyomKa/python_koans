@@ -16,16 +16,24 @@
 # and
 #   about_triangle_project_2.py
 #
+
+def _illegal(a, b, c):
+    return a + b <= c or a + c <= b or b + c <= a
+
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
     num_unique_sides = len({a,b,c})
-
+    if _illegal(a, b, c):
+        raise TriangleError()
     if num_unique_sides is 3:
         return 'scalene'
     elif num_unique_sides is 2:
         return 'isosceles'
     else:
         return 'equilateral'
+
+
+
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
