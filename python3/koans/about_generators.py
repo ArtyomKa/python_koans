@@ -19,7 +19,7 @@ class AboutGenerators(Koan):
         for bacon in bacon_generator:
             result.append(bacon)
 
-        self.assertEqual(__, result)
+        self.assertEqual(['crunchy bacon', 'veggie bacon', 'danish bacon'], result)
 
     def test_generators_are_different_to_list_comprehensions(self):
         num_list = [x*2 for x in range(1,3)]
@@ -142,5 +142,3 @@ class AboutGenerators(Koan):
         next(generator)
         # 'next(generator)' is exactly equivalent to 'generator.send(None)'
         self.assertEqual(__, generator.send(None))
-
-
